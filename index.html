@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chibi Pose Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="studio">
+      <header class="hero">
+        <p class="eyebrow">Dress Up Game</p>
+        <h1>Chibi Pose Studio</h1>
+        <p>Create, pose, style, and save your own chibi collection.</p>
+      </header>
+
+      <section class="layout">
+        <aside class="controls card">
+          <h2>Character Builder</h2>
+
+          <label for="outfitColor">Outfit Color</label>
+          <select id="outfitColor"></select>
+
+          <label for="eyeColor">Eye Color</label>
+          <select id="eyeColor"></select>
+
+          <label for="skinTone">Skin Tone</label>
+          <select id="skinTone"></select>
+
+          <label for="mouthType">Mouth Type</label>
+          <select id="mouthType"></select>
+
+          <label for="noseType">Nose Type</label>
+          <select id="noseType"></select>
+
+          <label for="earType">Ear Type</label>
+          <select id="earType"></select>
+
+          <hr />
+
+          <h3>Body Pose</h3>
+          <label for="bodyPose">Pose Preset</label>
+          <select id="bodyPose"></select>
+
+          <label for="headTilt">Head Tilt</label>
+          <input id="headTilt" type="range" min="-25" max="25" value="0" />
+
+          <label for="eyeOpen">Eye Openness</label>
+          <input id="eyeOpen" type="range" min="30" max="100" value="100" />
+
+          <label for="browAngle">Brow Angle</label>
+          <input id="browAngle" type="range" min="-20" max="20" value="0" />
+
+          <hr />
+
+          <h3>Background</h3>
+          <label for="backgroundStyle">Backdrop</label>
+          <select id="backgroundStyle"></select>
+
+          <label for="chibiName">Save Name</label>
+          <input id="chibiName" type="text" placeholder="My Cool Chibi" maxlength="40" />
+
+          <button id="saveChibiBtn" type="button">Save Chibi</button>
+        </aside>
+
+        <section class="preview card">
+          <div id="previewStage" class="stage">
+            <div id="chibiCanvas" class="chibi-canvas"></div>
+          </div>
+          <p class="hint">Tip: Try different body and face pose combos for expressive characters.</p>
+        </section>
+      </section>
+
+      <section class="saved card">
+        <div class="saved-head">
+          <h2>Saved Chibis</h2>
+          <button id="clearSavedBtn" type="button" class="ghost">Clear All</button>
+        </div>
+        <div id="savedList" class="saved-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+        <div class="summary-card child-balance-card">
+          <h3>Your Coin Balance</h3>
+          <p id="childBalance" class="balance-value">0 Coins</p>
+          <p id="childLimitStatus" class="note-text"></p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Allowance Shop</h3>
+            <div id="shopGrid" class="shop-grid"></div>
+          </article>
+
+          <article class="card">
+            <h3>Your Cart</h3>
+            <div id="cartList" class="cart-list"></div>
+            <div class="cart-footer">
+              <p id="cartTotal">Total: 0 Coins</p>
+              <button id="checkoutBtn" type="button">Checkout</button>
+            </div>
+          </article>
+        </div>
+
+        <article class="card">
+          <h3>Request A Shop Item</h3>
+          <form id="requestForm" class="stack">
+            <label for="requestItem">Item Name</label>
+            <input id="requestItem" type="text" placeholder="What do you want in the shop?" required />
+            <label for="requestDetails">Why do you want it?</label>
+            <textarea id="requestDetails" rows="3" placeholder="Optional details"></textarea>
+            <button type="submit">Send Request</button>
+          </form>
+          <div id="childRequestList" class="inventory-list"></div>
+        </article>
+
+        <article class="card">
+          <h3>Past Purchases</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Item(s)</th>
+                  <th>Coins Spent</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="purchaseTable"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="app.js?v=20260218b"></script>
+  </body>
+</html>
